@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collected Labels</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="results-header">
+      <h1>Collected Labels</h1>
+      <button class="export-btn" id="export-csv">Export CSV</button>
+    </div>
+    <div id="results-body"></div>
+  </div>
+  <script>
+  (function () {
+    var KEY = "emotion_label_data";
+    var data;
+    try { data = JSON.parse(localStorage.getItem(KEY) || "[]"); }
+    catch (_) { data = []; }
+
+    var body = document.getElementById("results-body");
+
+    if (!data.length) {
+      body.innerHTML = '<p class="results-empty">No submissions yet. Complete the labeling task first.</p>';
+      return;
+    }
+
+    var rows = [];
+    data.forEach(function (sub) {
+      sub.responses.forEach(function (r) {
+        rows.push({
+          participant: sub.participantId,
+          time: sub.timestamp.replace("T", " ").slice(0, 19),
+          tweetId: r.tweetId,
+          tweet: r.tweetText,
+          label: r.selectedLabel,
+          truth: r.groundTruth,
+        });
+      });
+    });
+
+    var html = '<table class="results-table"><thead><tr>' +
+      "<th>Participant</th><th>Time</th><th>Tweet ID</th>" +
+      '<th class="tweet-col">Tweet</th><th>Label</th><th>Ground Truth</th><th>Match</th>' +
+      "</tr></thead><tbody>";
+
+    rows.forEach(function (r) {
+      var match = r.label === r.truth;
+      var cls = match ? "match" : "mismatch";
+      var text = r.tweet.length > 60 ? r.tweet.slice(0, 60) + "…" : r.tweet;
+      html += "<tr>" +
+        "<td>" + esc(r.participant) + "</td>" +
+        "<td>" + esc(r.time) + "</td>" +
+        "<td>" + r.tweetId + "</td>" +
+        '<td class="tweet-col" title="' + esc(r.tweet) + '">' + esc(text) + "</td>" +
+        "<td>" + esc(r.label) + "</td>" +
+        "<td>" + esc(r.truth) + "</td>" +
+        '<td class="' + cls + '">' + (match ? "yes" : "no") + "</td>" +
+        "</tr>";
+    });
+
+    html += "</tbody></table>";
+
+    var summary = "<p style='margin-bottom:1rem;font-size:0.9rem;color:#666'>" +
+      data.length + " submission(s), " + rows.length + " labels total</p>";
+
+    body.innerHTML = summary + html;
+
+    function esc(s) {
+      var d = document.createElement("div");
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    document.getElementById("export-csv").addEventListener("click", function () {
+      var csv = "participant,timestamp,tweet_id,tweet_text,selected_label,ground_truth,match\n";
+      rows.forEach(function (r) {
+        csv += '"' + r.participant.replace(/"/g, '""') + '",' +
+          r.time + "," + r.tweetId + ',"' +
+          r.tweet.replace(/"/g, '""') + '",' +
+          r.label + "," + r.truth + "," +
+          (r.label === r.truth ? "yes" : "no") + "\n";
+      });
+      var blob = new Blob([csv], { type: "text/csv" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "emotion_labels.csv";
+      a.click();
+    });
+  })();
+  </script>
+</body>
+</html>

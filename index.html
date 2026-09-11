@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tweet Emotion Labeling</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <section id="welcome" class="screen active">
+      <h1>Tweet Emotion Labeling</h1>
+      <div class="instructions">
+        <p>You'll read <strong>5 short tweets</strong> and label each one with the emotion it expresses. Pick from six options:</p>
+        <dl class="emotion-defs">
+          <dt>Anger</dt><dd>&mdash; frustration, irritation, outrage</dd>
+          <dt>Fear</dt><dd>&mdash; anxiety, worry, dread</dd>
+          <dt>Joy</dt><dd>&mdash; happiness, excitement, contentment</dd>
+          <dt>Love</dt><dd>&mdash; affection, warmth, caring</dd>
+          <dt>Sadness</dt><dd>&mdash; grief, disappointment, melancholy</dd>
+          <dt>Surprise</dt><dd>&mdash; astonishment, unexpectedness</dd>
+        </dl>
+        <p class="note">Some tweets might feel ambiguous&mdash;just go with your gut. There are no wrong answers; we want your honest read.</p>
+      </div>
+      <div class="start-form">
+        <label for="participant-id">Your name or identifier</label>
+        <input type="text" id="participant-id" placeholder="e.g. Alex, Participant_3" autocomplete="off">
+        <button id="start-btn" disabled>Start labeling</button>
+      </div>
+    </section>
+
+    <section id="labeling" class="screen">
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="progress-text">Tweet <span id="current-num">1</span> of <span id="total-num">5</span></div>
+
+      <div class="tweet-card">
+        <p id="tweet-text"></p>
+      </div>
+
+      <p class="prompt">What emotion does this tweet express?</p>
+
+      <div class="emotion-grid">
+        <button class="emotion-btn" data-emotion="anger">Anger</button>
+        <button class="emotion-btn" data-emotion="fear">Fear</button>
+        <button class="emotion-btn" data-emotion="joy">Joy</button>
+        <button class="emotion-btn" data-emotion="love">Love</button>
+        <button class="emotion-btn" data-emotion="sadness">Sadness</button>
+        <button class="emotion-btn" data-emotion="surprise">Surprise</button>
+      </div>
+
+      <div class="nav-row">
+        <button id="prev-btn" class="nav-btn" disabled>&larr; Back</button>
+        <button id="next-btn" class="nav-btn primary" disabled>Next &rarr;</button>
+      </div>
+    </section>
+
+    <section id="review" class="screen">
+      <h2>Review your labels</h2>
+      <p class="review-intro">Click any row to go back and change it.</p>
+      <div id="review-list"></div>
+      <div class="nav-row">
+        <button id="submit-btn">Submit</button>
+      </div>
+    </section>
+
+    <section id="done" class="screen">
+      <h2>All done!</h2>
+      <p>Your labels have been saved. Thanks for participating.</p>
+      <p class="done-sub"><a href="results.html">View collected data</a></p>
+    </section>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

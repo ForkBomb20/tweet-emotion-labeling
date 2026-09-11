@@ -1,0 +1,272 @@
+[
+  {
+    "id": 0,
+    "text": "i know im quite selfish but sometimes i feel like i dont want to throw everything just for something that is uncertain",
+    "ground_truth": "fear"
+  },
+  {
+    "id": 1,
+    "text": "i feel the gentle pull of your heart",
+    "ground_truth": "love"
+  },
+  {
+    "id": 2,
+    "text": "i have not written is that i am still feeling angry about something that happened on friday which seems to have invaded my happy place with recurring angry thoughts",
+    "ground_truth": "anger"
+  },
+  {
+    "id": 3,
+    "text": "i feel really wronged in fact what hu jia did is good for society",
+    "ground_truth": "anger"
+  },
+  {
+    "id": 4,
+    "text": "i feel i am really teaching and students get some lovely finished pieces",
+    "ground_truth": "love"
+  },
+  {
+    "id": 5,
+    "text": "im feeling so invigorated and ready for whats ahead and very excited to share all that information with all of you",
+    "ground_truth": "joy"
+  },
+  {
+    "id": 6,
+    "text": "i feel like quitting rugby because i am ignored",
+    "ground_truth": "sadness"
+  },
+  {
+    "id": 7,
+    "text": "i already went out of my way to be as considerate as possible to others but now i feel like i am being abused",
+    "ground_truth": "sadness"
+  },
+  {
+    "id": 8,
+    "text": "i guess only my wife can really know for sure but i feel at least a little bit less selfish since being married",
+    "ground_truth": "anger"
+  },
+  {
+    "id": 9,
+    "text": "id like to think i could live happily away from home but i know id definitely feel homesick id miss my friends and our fun outings the most",
+    "ground_truth": "sadness"
+  },
+  {
+    "id": 10,
+    "text": "i feel like were all pretty supportive of each other",
+    "ground_truth": "love"
+  },
+  {
+    "id": 11,
+    "text": "im feeling a bit frustrated with myself tonight",
+    "ground_truth": "anger"
+  },
+  {
+    "id": 12,
+    "text": "i don t recall ever feeling carefree",
+    "ground_truth": "joy"
+  },
+  {
+    "id": 13,
+    "text": "i dont watch a whole lot however when i do i turn off the tv and feel stunned",
+    "ground_truth": "surprise"
+  },
+  {
+    "id": 14,
+    "text": "when a boy tried to fool me so he would be ok trying to show me that he is a gook boy",
+    "ground_truth": "anger"
+  },
+  {
+    "id": 15,
+    "text": "i feel strange being thankful when such awful things on the other sides of the oceans that surround that country happen on a daily basis",
+    "ground_truth": "fear"
+  },
+  {
+    "id": 16,
+    "text": "i think it makes the marathon feel more worthwhile",
+    "ground_truth": "joy"
+  },
+  {
+    "id": 17,
+    "text": "i started going down the adventure feeling totally ludicrous and wondering if this wasnt all just a waste of my time thats when i saw this screenshot",
+    "ground_truth": "surprise"
+  },
+  {
+    "id": 18,
+    "text": "i still feel amazed by its beauty diversity and joie de vivre",
+    "ground_truth": "surprise"
+  },
+  {
+    "id": 19,
+    "text": "i want to not feel shy with them i want to have fun with them",
+    "ground_truth": "fear"
+  },
+  {
+    "id": 20,
+    "text": "i had on my plate without the stress of feeling completely overwhelmed",
+    "ground_truth": "surprise"
+  },
+  {
+    "id": 21,
+    "text": "i can t take medication because its triggering i have to be really at the point of i can t stand what i m feeling anymore just so i can get past that barrier but medicine has me afraid of vomiting",
+    "ground_truth": "fear"
+  },
+  {
+    "id": 22,
+    "text": "i would not accept his love fully feeling of being damaged",
+    "ground_truth": "sadness"
+  },
+  {
+    "id": 23,
+    "text": "i had really felt quite good and safe about having the baby at home although there are always risks but i still feel blessed about how everything turned out",
+    "ground_truth": "love"
+  },
+  {
+    "id": 24,
+    "text": "ive also begun going through a round of self edits on the first episode of season three and im feeling quite thrilled with how its fitting together",
+    "ground_truth": "joy"
+  },
+  {
+    "id": 25,
+    "text": "i feel about my mommy amp me friends our friendships grew so naturally the strength of them surprised me",
+    "ground_truth": "surprise"
+  },
+  {
+    "id": 26,
+    "text": "i forgot my passport and i realize that my stomach was feeling funny until i went to the washroom and understand that i was actually sick",
+    "ground_truth": "surprise"
+  },
+  {
+    "id": 27,
+    "text": "i decided that since things were finally starting to go well but i was still feeling a little uncertain i d give myself a little more time to let the training come together",
+    "ground_truth": "fear"
+  },
+  {
+    "id": 28,
+    "text": "i feel obnoxious for saying that",
+    "ground_truth": "anger"
+  },
+  {
+    "id": 29,
+    "text": "i have enjoyed the experienced of being entranced by most none up to this point have ever made me feel the experience of being devoted",
+    "ground_truth": "love"
+  },
+  {
+    "id": 30,
+    "text": "i have a sick feeling a longing for each second to be with you even though that will inevitably make it worse when you leave liverpool",
+    "ground_truth": "love"
+  },
+  {
+    "id": 31,
+    "text": "i went to bed feeling very pleased with my lovely day out and feeling like id made a few really lovely friends",
+    "ground_truth": "joy"
+  },
+  {
+    "id": 32,
+    "text": "i do feel a bit obnoxious it is definately the weather",
+    "ground_truth": "anger"
+  },
+  {
+    "id": 33,
+    "text": "i feel his loss too chakotay reassured then silently approached her and enveloped her in a hug",
+    "ground_truth": "joy"
+  },
+  {
+    "id": 34,
+    "text": "i woke up even more tired than the night before and feeling groggy",
+    "ground_truth": "sadness"
+  },
+  {
+    "id": 35,
+    "text": "finding out that i am not an as able student as i thought",
+    "ground_truth": "fear"
+  },
+  {
+    "id": 36,
+    "text": "i have these new songs that feel very vital and real to me and are ready to be shared",
+    "ground_truth": "joy"
+  },
+  {
+    "id": 37,
+    "text": "i feel really lucky to be part of what looks like an active and friendly homeschooling group here in dubai",
+    "ground_truth": "joy"
+  },
+  {
+    "id": 38,
+    "text": "i can be as kind as an angel but sometimes i can also be as mean as a devil i used to use harsh words when i feel irritated",
+    "ground_truth": "anger"
+  },
+  {
+    "id": 39,
+    "text": "i feel burdened by her presence",
+    "ground_truth": "sadness"
+  },
+  {
+    "id": 40,
+    "text": "i cannot seem to shake this feeling of being completely numb",
+    "ground_truth": "sadness"
+  },
+  {
+    "id": 41,
+    "text": "i know why you are angry at me and you have every right to feel those angry perhaps even hateful feelings for me",
+    "ground_truth": "anger"
+  },
+  {
+    "id": 42,
+    "text": "i am left feeling rather distressed and torn",
+    "ground_truth": "fear"
+  },
+  {
+    "id": 43,
+    "text": "i learned about different things like how family plan the arrangements and even how real the pain can feel when a loved one passes on",
+    "ground_truth": "love"
+  },
+  {
+    "id": 44,
+    "text": "i would have wasted time and money and i just feel really pressured because i dont want to do that",
+    "ground_truth": "fear"
+  },
+  {
+    "id": 45,
+    "text": "i wanted to not feel frightened anymore",
+    "ground_truth": "fear"
+  },
+  {
+    "id": 46,
+    "text": "is that you feel it more than hear it and the vibrations are so gentle that it doesnt bother me",
+    "ground_truth": "love"
+  },
+  {
+    "id": 47,
+    "text": "i suspect that a few feel revulsion it elicits a weird uncomfortable fascination",
+    "ground_truth": "surprise"
+  },
+  {
+    "id": 48,
+    "text": "i was an outsider and i never felt part as i was new that made me feel disheartened",
+    "ground_truth": "sadness"
+  },
+  {
+    "id": 49,
+    "text": "i don t feel like myself when i am studying probably because i am not studying anything i am passionate about",
+    "ground_truth": "love"
+  },
+  {
+    "id": 50,
+    "text": "i have these great feelings of fear and trepidation that these children will be abused because i know what the statistics are",
+    "ground_truth": "sadness"
+  },
+  {
+    "id": 51,
+    "text": "i am now nearly finished the week detox and i feel amazing",
+    "ground_truth": "surprise"
+  },
+  {
+    "id": 52,
+    "text": "i am just waking up with not nearly enough sleep and feeling dazed",
+    "ground_truth": "surprise"
+  },
+  {
+    "id": 53,
+    "text": "i feel really joyful img src http s",
+    "ground_truth": "joy"
+  }
+]
