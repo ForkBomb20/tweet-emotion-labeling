@@ -8,7 +8,7 @@ Each participant labels 5 randomly selected tweets from a pool of 54 (drawn from
 
 ## Running locally
 
-This is a static site — no build step, no dependencies. You just need a local HTTP server because `fetch` won't work with `file://` URLs.
+This is a static site, no build step, and no dependencies. You just need a local HTTP server to perform local testing or review.
 
 ```sh
 # Python (any version)
@@ -38,7 +38,7 @@ If you want responses from multiple participants collected in one place:
 3. Deploy as a web app (Execute as: Me, Access: Anyone)
 4. Set the `SCRIPT_URL` variable in `app.js` to your deployment URL
 
-Without this, everything still works — data is saved to `localStorage` and viewable at `results.html`.
+Without this, everything still works, data is saved to `localStorage` and viewable at `results.html`. Results just will not persist, this is performed on the deployed version however.
 
 ## Swapping in your own tweets
 
