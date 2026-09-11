@@ -32,7 +32,7 @@
     data.forEach(function (sub) {
       sub.responses.forEach(function (r) {
         rows.push({
-          participant: sub.participantId,
+          participant: sub.uid || sub.participantId || "—",
           time: sub.timestamp.replace("T", " ").slice(0, 19),
           tweetId: r.tweetId,
           tweet: r.tweetText,
@@ -43,7 +43,7 @@
     });
 
     var html = '<table class="results-table"><thead><tr>' +
-      "<th>Participant</th><th>Time</th><th>Tweet ID</th>" +
+      "<th>UID</th><th>Time</th><th>Tweet ID</th>" +
       '<th class="tweet-col">Tweet</th><th>Label</th><th>Ground Truth</th><th>Match</th>' +
       "</tr></thead><tbody>";
 
@@ -76,7 +76,7 @@
     }
 
     document.getElementById("export-csv").addEventListener("click", function () {
-      var csv = "participant,timestamp,tweet_id,tweet_text,selected_label,ground_truth,match\n";
+      var csv = "uid,timestamp,tweet_id,tweet_text,selected_label,ground_truth,match\n";
       rows.forEach(function (r) {
         csv += '"' + r.participant.replace(/"/g, '""') + '",' +
           r.time + "," + r.tweetId + ',"' +

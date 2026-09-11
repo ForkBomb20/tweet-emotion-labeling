@@ -12,16 +12,52 @@
     <section id="welcome" class="screen active">
       <h1>Tweet Emotion Labeling</h1>
       <div class="instructions">
-        <p>You'll read <strong>5 short tweets</strong> and label each one with the emotion it expresses. Pick from six options:</p>
-        <dl class="emotion-defs">
-          <dt>Anger</dt><dd>&mdash; frustration, irritation, outrage</dd>
-          <dt>Fear</dt><dd>&mdash; anxiety, worry, dread</dd>
-          <dt>Joy</dt><dd>&mdash; happiness, excitement, contentment</dd>
-          <dt>Love</dt><dd>&mdash; affection, warmth, caring</dd>
-          <dt>Sadness</dt><dd>&mdash; grief, disappointment, melancholy</dd>
-          <dt>Surprise</dt><dd>&mdash; astonishment, unexpectedness</dd>
-        </dl>
-        <p class="note">Some tweets might feel ambiguous&mdash;just go with your gut. There are no wrong answers; we want your honest read.</p>
+        <p>You'll read 5 short tweets and label each one with the emotion it expresses. Pick from six options:</p>
+        <div class="emotion-list">
+          <div class="emotion-entry">
+            <span class="emotion-name" style="color:#bf544c">Anger</span> &mdash; frustration, irritation, outrage
+            <div class="example-tweets">
+              <div class="example">"i was feeling irate and extremely uncomfortable"</div>
+              <div class="example">"i just feel more resentful and tell myself it was better if i did not share with him"</div>
+            </div>
+          </div>
+          <div class="emotion-entry">
+            <span class="emotion-name" style="color:#7b6ba5">Fear</span> &mdash; anxiety, worry, dread
+            <div class="example-tweets">
+              <div class="example">"i was just feeling terrified terrified of the people around me and the situation it involves"</div>
+              <div class="example">"i always feel very threatened by her when it comes to guys"</div>
+            </div>
+          </div>
+          <div class="emotion-entry">
+            <span class="emotion-name" style="color:#b8912a">Joy</span> &mdash; happiness, excitement, contentment
+            <div class="example-tweets">
+              <div class="example">"im feeling playful and humorous"</div>
+              <div class="example">"i got to feel carefree on the ice with the cold air nipping my face"</div>
+            </div>
+          </div>
+          <div class="emotion-entry">
+            <span class="emotion-name" style="color:#ad5575">Love</span> &mdash; affection, warmth, caring
+            <div class="example-tweets">
+              <div class="example">"i feel romantic when i wear it under my raphael coat"</div>
+              <div class="example">"i feel like one of those devoted fans who follows their favorite band while they are on tour"</div>
+            </div>
+          </div>
+          <div class="emotion-entry">
+            <span class="emotion-name" style="color:#5a7da0">Sadness</span> &mdash; grief, disappointment, melancholy
+            <div class="example-tweets">
+              <div class="example">"im feeling homesick this week"</div>
+              <div class="example">"i feel a little isolated being in my house all the time"</div>
+            </div>
+          </div>
+          <div class="emotion-entry">
+            <span class="emotion-name" style="color:#ad7530">Surprise</span> &mdash; astonishment, unexpectedness
+            <div class="example-tweets">
+              <div class="example">"i look back on that i feel amazed that at such a young age i could just pull it together like that"</div>
+              <div class="example">"i feel curious and bewildered"</div>
+            </div>
+          </div>
+        </div>
+        <p class="note">Some tweets might feel ambiguous. Just go with your gut; there are no wrong answers.</p>
       </div>
       <div class="start-form">
         <label for="participant-id">Your name or identifier</label>
@@ -67,7 +103,10 @@
     <section id="done" class="screen">
       <h2>All done!</h2>
       <p>Your labels have been saved. Thanks for participating.</p>
-      <p class="done-sub"><a href="results.html">View collected data</a></p>
+      <div class="done-actions">
+        <button id="restart-btn" class="nav-btn">Label another 5</button>
+        <a href="results.html" class="done-link">View collected data</a>
+      </div>
     </section>
 
   </div>

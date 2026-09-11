@@ -1,5 +1,7 @@
 (function () {
+  // Paste your deployed Google Apps Script web app URL here
   var SCRIPT_URL = "";
+
   var PER_SESSION = 5;
   var STORAGE_KEY = "emotion_label_data";
 
@@ -7,7 +9,7 @@
   var sessionTweets = [];
   var labels = {};
   var idx = 0;
-  var pid = "";
+  var uid = "";
 
   var badgeColors = {
     anger: "#bf544c",
@@ -24,12 +26,22 @@
   function show(id) {
     $$(".screen").forEach(function (s) { s.classList.remove("active"); });
     document.getElementById(id).classList.add("active");
+    window.scrollTo(0, 0);
   }
 
   function escapeHtml(s) {
     var d = document.createElement("div");
     d.textContent = s;
     return d.innerHTML;
+  }
+
+  function generateUid() {
+    var chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+    var id = "";
+    for (var i = 0; i < 8; i++) {
+      id += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return id;
   }
 
   function loadStored() {
@@ -46,11 +58,21 @@
   function sendRemote(submission) {
     if (!SCRIPT_URL) return;
     try {
+      var flat = [];
+      submission.responses.forEach(function (r) {
+        flat.push({
+          uid: submission.uid,
+          timestamp: submission.timestamp,
+          tweetId: r.tweetId,
+          tweetText: r.tweetText,
+          selectedLabel: r.selectedLabel,
+        });
+      });
       fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify(submission),
+        body: JSON.stringify({ rows: flat }),
       });
     } catch (_) {}
   }
@@ -79,8 +101,8 @@
 
     $("#prev-btn").disabled = idx === 0;
     $("#next-btn").disabled = !(idx in labels);
-    $("#next-btn").textContent =
-      idx === PER_SESSION - 1 ? "Review →" : "Next →";
+    $("#next-btn").innerHTML =
+      idx === PER_SESSION - 1 ? "Review &rarr;" : "Next &rarr;";
   }
 
   function buildReview() {
@@ -90,7 +112,6 @@
     sessionTweets.forEach(function (tw, i) {
       var item = document.createElement("div");
       item.className = "review-item";
-      item.setAttribute("data-index", i);
 
       var text = tw.text.length > 100 ? tw.text.slice(0, 100) + "…" : tw.text;
       var em = labels[i];
@@ -120,7 +141,7 @@
     });
 
     var submission = {
-      participantId: pid,
+      uid: uid,
       timestamp: new Date().toISOString(),
       responses: responses,
     };
@@ -128,6 +149,14 @@
     saveLocal(submission);
     sendRemote(submission);
     show("done");
+  }
+
+  function startSession() {
+    sessionTweets = pickTweets();
+    labels = {};
+    idx = 0;
+    show("labeling");
+    renderTweet();
   }
 
   function bindEvents() {
@@ -139,13 +168,9 @@
     });
 
     function begin() {
-      pid = input.value.trim();
-      if (!pid) return;
-      sessionTweets = pickTweets();
-      labels = {};
-      idx = 0;
-      show("labeling");
-      renderTweet();
+      if (!input.value.trim()) return;
+      uid = generateUid();
+      startSession();
     }
 
     startBtn.addEventListener("click", begin);
@@ -172,6 +197,8 @@
     });
 
     $("#submit-btn").addEventListener("click", submit);
+
+    $("#restart-btn").addEventListener("click", startSession);
   }
 
   fetch("tweets.json")
