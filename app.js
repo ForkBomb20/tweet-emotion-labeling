@@ -1,6 +1,6 @@
 (function () {
   // Paste your deployed Google Apps Script web app URL here
-  var SCRIPT_URL = "https://script.google.com/a/macros/umich.edu/s/AKfycbxdJHaXH_nAyeOSYC7bM1zdnllZuxk_ls_Kgkd75lU3FyNrqk2UAczh3oXa-HFuwt5u/exec";
+  var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxdJHaXH_nAyeOSYC7bM1zdnllZuxk_ls_Kgkd75lU3FyNrqk2UAczh3oXa-HFuwt5u/exec";
 
   var PER_SESSION = 5;
   var STORAGE_KEY = "emotion_label_data";
